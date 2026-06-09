@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Light Theme Palette */
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --border-default: #e2e8f0;
+  
+  /* Blue theme (Default / Achievement / Special) */
+  --blue-bg: #f0f9ff;
+  --blue-border: #0284c7;
+  --blue-text: #0369a1;
+  --blue-glow: rgba(2, 132, 199, 0.1);
+  
+  /* Orange theme (Match) */
+  --orange-bg: #fff7ed;
+  --orange-border: #ea580c;
+  --orange-text: #c2410c;
+  --orange-glow: rgba(234, 88, 12, 0.1);
+
+  /* Yellow theme (Country) */
+  --yellow-bg: #fefce8;
+  --yellow-border: #ca8a04;
+  --yellow-text: #a16207;
+  --yellow-glow: rgba(202, 138, 4, 0.1);
+  
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  --transition: all 0.25s ease-in-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff; /* Bắt buộc nền trắng */
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* App container */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* Navbar */
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 16px 24px;
+  background: #ffffff;
+  border: 2px solid var(--blue-border); /* Viền màu xanh dương */
+  border-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--blue-border);
+}
+
+.nav-logo {
+  font-size: 26px;
+}
+
+.nav-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--blue-border);
+  letter-spacing: 0.5px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.nav-link:hover {
+  color: var(--blue-border);
+  background: var(--blue-bg);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: var(--blue-border);
+  border: 1px solid var(--blue-border);
+}
+
+/* Main Content Wrapper */
+.main-content {
+  margin-top: 10px;
+}
+
+/* Header Sections */
+.page-header {
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.page-subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* Controls (Search, Filter, Actions) */
+.controls-bar {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: var(--transition);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--blue-border);
+  box-shadow: 0 0 0 3px var(--blue-glow);
+}
+
+.select-field {
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  min-width: 160px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.select-field:focus {
+  outline: none;
+  border-color: var(--blue-border);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--blue-border);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: #026ca3;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--text-secondary);
+  border: 2px solid var(--border-default);
+}
+
+.btn-secondary:hover {
+  background: #f1f5f9;
+  border-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+
+.btn-danger {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* Badge Cards Grid */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.badge-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  position: relative;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  
+  /* Mặc định là khối hộp màu xanh dương (Blue Box) */
+  background-color: var(--blue-bg);
+  border: 2px solid var(--blue-border);
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.badge-type-tag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--blue-border);
+  color: #ffffff;
+}
+
+/* Khối hộp màu cam (Orange Box) dành cho Match type */
+.badge-card.match {
+  background-color: var(--orange-bg);
+  border-color: var(--orange-border);
+}
+
+.badge-card.match .badge-type-tag {
+  background: var(--orange-border);
+}
+
+.badge-card.match .badge-avatar {
+  background: rgba(234, 88, 12, 0.08);
+  border-color: rgba(234, 88, 12, 0.2);
+}
+
+.badge-card.match .badge-name {
+  color: var(--orange-text);
+}
+
+/* Khối hộp màu vàng (Yellow Box) dành cho Country type */
+.badge-card.country {
+  background-color: var(--yellow-bg);
+  border-color: var(--yellow-border);
+}
+
+.badge-card.country .badge-type-tag {
+  background: var(--yellow-border);
+}
+
+.badge-card.country .badge-avatar {
+  background: rgba(202, 138, 4, 0.08);
+  border-color: rgba(202, 138, 4, 0.2);
+}
+
+.badge-card.country .badge-name {
+  color: var(--yellow-text);
+}
+
+.badge-avatar {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(2, 132, 199, 0.06);
+  border: 1px solid rgba(2, 132, 199, 0.15);
+  align-self: center;
+  transition: var(--transition);
+}
+
+.badge-card:hover .badge-avatar {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.badge-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-text);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.badge-desc {
+  font-size: 13.5px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.badge-dates {
+  font-size: 11px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  padding-top: 10px;
+  margin-bottom: 14px;
+}
+
+.badge-dates-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: stretch;
+}
+
+.badge-actions .btn {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Biểu mẫu / Panel có viền xanh */
+.glass-panel {
+  background: #ffffff;
+  border: 2px solid var(--blue-border);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.textarea-field {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.emoji-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 8px;
+  margin-top: 6px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+}
+
+.emoji-btn {
+  font-size: 20px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  border: 1px solid var(--border-default);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emoji-btn:hover {
+  background: var(--blue-bg);
+  border-color: var(--blue-border);
+  transform: scale(1.1);
+}
+
+.emoji-btn.selected {
+  background: var(--blue-bg);
+  border-color: var(--blue-border);
+  box-shadow: 0 0 0 2px var(--blue-border);
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/* Khối xác nhận xóa */
+.delete-panel {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.warning-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+.delete-badge-preview {
+  margin: 20px 0;
+  padding: 16px;
+  background: #fef2f2;
+  border: 2px dashed #ef4444;
+  border-radius: var(--radius-md);
+}
+
+.delete-badge-preview h3 {
+  font-size: 18px;
+  color: #b91c1c;
+  margin-top: 8px;
+}
+
+.delete-badge-preview p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--border-default);
+}
+
+.empty-icon {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+.empty-text {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+  .controls-bar {
+    flex-direction: column;
+  }
+  .search-input-wrapper, .select-field, .btn {
+    width: 100%;
+  }
+  .glass-panel {
+    padding: 20px 14px;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions .btn {
+    width: 100%;
+  }
+}

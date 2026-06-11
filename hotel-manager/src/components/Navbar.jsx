@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ onLogout }) {
   return (
     <nav className="navbar">
-      <Link to="/" className="nav-link">
+      <Link to="/home" className="nav-link">
         Trang chủ
       </Link>
 
@@ -18,6 +18,12 @@ function Navbar() {
       <Link to="/customers" className="nav-link">
         Khách hàng
       </Link>
+
+      {onLogout && (
+        <button type="button" className="nav-link nav-button" onClick={onLogout}>
+          Đăng xuất
+        </button>
+      )}
     </nav>
   );
 }
